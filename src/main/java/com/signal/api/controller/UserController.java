@@ -31,12 +31,6 @@ public class UserController {
 	private JwtUtil jwtTokenUtil;
 	
 	@CrossOrigin(origins = "http://localhost:3000")
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	public String hello() { 
-		return "Hello user";
-	}
-	
-	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 		try {
@@ -50,6 +44,11 @@ public class UserController {
 		final String jwt = jwtTokenUtil.generateToken(userDetails);
 		
 		return ResponseEntity.ok(new AuthenticationResponse(jwt));
+	}
+	
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public String hello() { 
+		return "Hello user";
 	}
 
 }
