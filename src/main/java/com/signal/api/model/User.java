@@ -25,8 +25,6 @@ public class User {
 		this.lastName = lastName;
 	}
 
-
-
 	public String getId() {
 		return id;
 	}
