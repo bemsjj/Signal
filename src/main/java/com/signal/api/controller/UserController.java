@@ -47,8 +47,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	public String hello() { 
-		return "Hello user";
+	public ResponseEntity<String> hello() { 
+		return ResponseEntity.ok("BOnjour");
 	}
 
 }
