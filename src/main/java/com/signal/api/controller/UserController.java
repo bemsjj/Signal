@@ -18,7 +18,6 @@ import com.signal.api.security.services.MyUserDetailsService;
 import com.signal.api.security.services.util.JwtUtil;
 
 
-@CrossOrigin(origins = "*")
 @RestController
 public class UserController {
 	
@@ -30,11 +29,14 @@ public class UserController {
 	
 	@Autowired
 	private JwtUtil jwtTokenUtil;
+	
+	@CrossOrigin(origins = "*")
 	@RequestMapping( "/user" )
 	public String hello() { 
 		return "Hello user";
 	}
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 		try {
