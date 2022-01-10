@@ -3,9 +3,11 @@ package com.signal.api.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.stereotype.Component;
 
-@Document
-public class User {
+@Component
+@Document(collection = "users")
+public class UserModel {
 	
 	@Id
 	private String id;
@@ -16,11 +18,11 @@ public class User {
 	@Field
 	private String password;
 
-	public User() {
+	public UserModel() {
 	}
 	
 	
-	public User(String username, String password) {
+	public UserModel(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}
@@ -47,19 +49,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	@Override
-	public String toString() {
-		return "{"
-					+ "id=" + id + ", "
-					+ "firstName=" + username + ", "
-					+ "lastName=" + password + 
-				"}";
-	}
-	
-	
-	
-	
+	}	
 	
 }
