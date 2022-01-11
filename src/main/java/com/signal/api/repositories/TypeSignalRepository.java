@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.signal.api.model.TypeSignalModel;
 
-@CrossOrigin(origins = { "http://localhost:3000", "https://signal-app-front.herokuapp.com/"})
+@CrossOrigin(origins = { "http://localhost:3000", "https://signal-app-front.herokuapp.com"})
 @RepositoryRestResource(collectionResourceRel = "typesignals", path = "typesignals")
 public interface TypeSignalRepository extends MongoRepository<TypeSignalModel, String>{
 	List<TypeSignalModel> findByNomType(@Param("nomType") String nomType);
