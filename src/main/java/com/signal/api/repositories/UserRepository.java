@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.signal.api.model.UserModel;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = { "http://localhost:3000", "https://signal-app-front.herokuapp.com/"})
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 public interface UserRepository extends MongoRepository<UserModel, String> {
 	UserModel findByUsername(@Param("username") String username);
