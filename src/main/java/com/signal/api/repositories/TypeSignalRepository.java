@@ -7,11 +7,10 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.signal.api.model.UserModel;
+import com.signal.api.model.TypeSignalModel;
 
 @CrossOrigin(origins = "http://localhost:3000")
-@RepositoryRestResource(collectionResourceRel = "users", path = "users")
-public interface UserRepository extends MongoRepository<UserModel, String> {
-	UserModel findByUsername(@Param("username") String username);
-	List<UserModel> findByNomRegion(@Param("nomRegion") String nomRegion);
+@RepositoryRestResource(collectionResourceRel = "typesignals", path = "typesignals")
+public interface TypeSignalRepository extends MongoRepository<TypeSignalModel, String>{
+	List<TypeSignalModel> findByNomType(@Param("nomType") String nomType);
 }

@@ -17,10 +17,12 @@ public class UserModel {
 	
 	@Field
 	private String password;
+	
+	@Field
+	private String nomRegion;
 
 	public UserModel() {
 	}
-	
 	
 	public UserModel(String username, String password) {
 		this.username = username;
@@ -49,6 +51,14 @@ public class UserModel {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}	
+	}
+
+	public String getNomRegion() {
+		return nomRegion;
+	}
+
+	public void setNomRegion(String nomRegion) {
+		this.nomRegion = nomRegion;
+	}
 	
 }
