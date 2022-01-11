@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.signal.api.model.RegionModel;
 
-@CrossOrigin(origins = { "http://localhost:3000", "https://signal-app-front.herokuapp.com/"})
+@CrossOrigin(origins = { "http://localhost:3000", "https://signal-app-front.herokuapp.com"})
 @RepositoryRestResource(collectionResourceRel = "regions", path = "regions")
 public interface RegionRepository extends MongoRepository<RegionModel, String> {
 	RegionModel findByNomRegion(@Param("nomRegion") String nomRegion);
