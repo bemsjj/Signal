@@ -30,7 +30,7 @@ public class AuthenticationController {
 	@Autowired
 	private JwtUtil jwtTokenUtil;
 	
-	@CrossOrigin(origins = "http://localhost:3000")
+	@CrossOrigin(origins = { "http://localhost:3000", "https://signal-app-front.herokuapp.com/"})
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 		try {
